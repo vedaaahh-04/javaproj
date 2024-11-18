@@ -1,0 +1,16 @@
+pipeline{
+    agent {label 'Master'}
+stages {
+    stage ("SCM Chkout-1"){
+       steps{
+        git branch: 'main', url: 'https://github.com/vedaaahh-04/javaproj'
+    }
+}
+    stage("java excuete"){
+      steps {
+       sh 'javac *.java'
+       sh 'java Simple'
+    }
+}
+}
+}
